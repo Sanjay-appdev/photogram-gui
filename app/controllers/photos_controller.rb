@@ -79,5 +79,30 @@ class PhotosController < ApplicationController
 
       redirect_to(next_url)
 
-    end
+    end 
+
+    def book 
+
+      the_photo_id = params.fetch("input_photo_id")
+      the_author_id = params.fetch("input_author_id")
+      c_body = params.fetch("input_body")
+
+      a_new_comment = Comment.new
+
+      a_new_comment.photo_id = the_photo_id
+      a_new_comment.author_id = the_author_id
+      a_new_comment.body = c_body
+
+      a_new_comment.save
+
+      
+
+ 
+      next_url = "/photos/" + the_photo_id.to_s
+
+      redirect_to(next_url)
+
+
+      end 
+
     end
