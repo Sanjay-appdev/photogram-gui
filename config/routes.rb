@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
   get("/insert_photo", { :controller =>"photos", :action =>"create" })
 
+  get("/insert_user_record", { :controller =>"users", :action => "index" })
+
   get("/update_photo/:modify_id", { :controller =>"photos", :action =>"update" })
 
   end
